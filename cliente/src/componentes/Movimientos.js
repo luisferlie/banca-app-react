@@ -1,9 +1,12 @@
 import React from 'react'
 import "./movimientos.css"
 
-function Movimientos({data}) {
+function Movimientos({data, saldo}) {
   
    const movements=data.account.movements
+
+   console.log('Me han repintado')
+   console.log(movements, saldo, '********')
    
    return (
     <div>
