@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import "./operar.css"
 import { ingresar, retirar } from '../functions/ingresarRetirar.js'
 import realizarTransferencia from '../functions/transferir.js'
-import { solicitarCredito } from '../functions/solicitarCredito.js'
+import  SolicitarCredito  from '../componentes/SolicitarCredito.js'
 import enviarMensaje from '../functions/mensajes.js'
 
 import Transferir from './Transferir.js'
@@ -76,16 +76,8 @@ function Operar({ data, saldo, user, token,updateSaldo }) {
 
             </div>
             <Transferir data={data} saldo={saldo} user={user} token={token} updateSaldo={updateSaldo}/>
-
-            <div className="operation operation--loan p-2">
-                <h2>Solicitar credito</h2>
-                <form className="form form--loan">
-
-                    <input type="number" className="form__input form__input--loan-amount" />
-                    <button className="form__btn form__btn--loan">&rarr;</button>
-
-                </form>
-            </div>
+            <SolicitarCredito/>
+            
             <div class="operation operation--close  p-2">
                 <h2>Cerrar cuenta</h2>
                 <form class="form form--close">

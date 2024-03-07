@@ -90,6 +90,7 @@ function Login() {
           <div className=" col-md-6 operaciones">
             <Operar data={data} saldo={saldo} token={token} user={user} updateSaldo={updateSaldo}/>
           </div>
+          
         </div>
       )}
     </>

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import realizarTransferencia from "../functions/transferir.js";
-import enviarmensaje from "../functions/mensajes.js";
+import enviarMensaje from "../functions/mensajes.js";
 import './transferir.css'
 
 function Transferir({ data, saldo, user, token, updateSaldo }) {
@@ -25,12 +25,12 @@ function Transferir({ data, saldo, user, token, updateSaldo }) {
     realizarTransferencia(transferencia, cuentaTo, user, token);
     
     if (Number(transferencia) > Number(saldo)) {
-      mensaje.current.innerText =
+      mensaje.current.value =
         "No dispone de saldo suficiente,pruebe otra cantidad";
       setTimeout(() => {
         mensaje.current.style.display = "none";
       }, 2000);
-      mensaje.current.value='no dispone de saldo suficiente'
+      enviarMensaje('no dispone de saldo suficiente') 
       transferBorrar.current.value = "";
 
       return;
